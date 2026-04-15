@@ -26,5 +26,12 @@ pipeline {
                 bat 'docker build -t bookshop-app .'
             }
         }
+
+        stage('Push to Docker Hub') {
+            steps {
+                bat 'docker tag bookshop-app vinaibrahim/bookshop-app:latest'
+                bat 'docker push vinaibrahim/bookshop-app:latest'
+            }
+        }
     }
 }
