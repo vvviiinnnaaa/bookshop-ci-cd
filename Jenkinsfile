@@ -3,12 +3,6 @@ pipeline {
 
     stages {
 
-        stage('Checkout') {
-            steps {
-                git branch: 'main', url: 'https://github.com/YOUR-USERNAME/bookshop-ci-cd.git'
-            }
-        }
-
         stage('Build Java') {
             steps {
                 bat 'javac *.java'
