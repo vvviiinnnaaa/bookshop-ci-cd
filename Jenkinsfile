@@ -28,10 +28,11 @@ pipeline {
         }
 
         stage('Push to Docker Hub') {
-            steps {
-                bat 'docker tag bookshop-app vinaibrahim/bookshop-app:latest'
-                bat 'docker push vinaibrahim/bookshop-app:latest'
-            }
-        }
+    steps {
+        bat 'docker login -u vinaibrahim -p Yhww1437.'
+        bat 'docker tag bookshop-app vinaibrahim/bookshop-app:latest'
+        bat 'docker push vinaibrahim/bookshop-app:latest'
+    }
+}
     }
 }
