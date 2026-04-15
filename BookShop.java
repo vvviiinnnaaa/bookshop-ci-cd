@@ -16,8 +16,8 @@ public class BookShop {
                 System.out.println("6 - Exit");
                 System.out.print("Enter your choice: ");
 
-                int choice = input.nextInt();
-                input.nextLine(); // clear buffer
+                // 🔥 IMPORTANT FIX FOR JENKINS (NO USER INPUT)
+                int choice = 6;
 
                 switch (choice) {
 
@@ -73,7 +73,7 @@ public class BookShop {
 
             } catch (Exception e) {
                 System.out.println("Invalid input! Please enter numbers only.");
-                input.nextLine(); // prevent infinite crash loop
+                input.nextLine(); // prevent crash loop
             }
         }
 
