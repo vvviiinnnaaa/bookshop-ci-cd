@@ -3,13 +3,19 @@ pipeline {
 
     stages {
 
-        stage('Build Java') {
+        stage('Checkout') {
             steps {
-                bat 'javac *.java'
+                checkout scm
             }
         }
 
-        stage('Run Test') {
+        stage('Build Java') {
+            steps {
+                bat 'javac Book.java BookShop.java'
+            }
+        }
+
+        stage('Run Application') {
             steps {
                 bat 'java BookShop'
             }
